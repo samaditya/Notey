@@ -1,23 +1,27 @@
 import "./App.css";
-import ErrorBoundary from "./components/ErrorBoundary";
-import Home from "./components/Home";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import { Home } from "./components/Home";
 import About from "./components/About";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NoteState from "./context/notes/NoteState";
+import { Alert } from "./components/Alert";
 
 function App() {
   return (
-    <div className="App">
-      <ErrorBoundary>
+    <>
+      <NoteState>
         <BrowserRouter>
           <Navbar />
+          <div className="container">
+          <Alert message="This is amazing React course" />
           <Routes>
-            <Route exact path="/" key={Home} element={ <Home/> } />
-            <Route exact path="/about" key={About} element={ <About/> } />
+            <Route exact path="/" key={Home} element={<Home />} />
+            <Route exact path="/about" key={About} element={<About />} />
           </Routes>
+          </div>
         </BrowserRouter>
-      </ErrorBoundary>
-    </div>
+      </NoteState>
+    </>
   );
 }
 
