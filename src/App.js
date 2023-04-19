@@ -5,6 +5,8 @@ import { Home } from "./components/Home";
 import About from "./components/About";
 import NoteState from "./context/notes/NoteState";
 import { Alert } from "./components/Alert";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
 
 function App() {
   return (
@@ -13,15 +15,18 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <div className="container">
-          <Alert message="This is amazing React course" />
+          <Alert message="" />
           <Routes>
             <Route exact path="/" key={Home} element={<Home />} />
             <Route exact path="/about" key={About} element={<About />} />
+            <Route exact path="/login" key={Login} element={<Login />} />
+            <Route exact path="/signup" key={Signup} element={<Signup />} />
+
           </Routes>
           </div>
         </BrowserRouter>
       </NoteState>
-    </>
+    </> 
   );
 }
 
