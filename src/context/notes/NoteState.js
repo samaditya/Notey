@@ -30,7 +30,8 @@ const NoteState = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwOTdmN2EzODA1OGNiOWVmZmFjMTEyIn0sImlhdCI6MTY3ODM0NDA1OH0.aGO0Jf2W9NeHUnBulMKmUtHHCoiq2kUxxGUGMEdfTWA"
+        // "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwOTdmN2EzODA1OGNiOWVmZmFjMTEyIn0sImlhdCI6MTY3ODM0NDA1OH0.aGO0Jf2W9NeHUnBulMKmUtHHCoiq2kUxxGUGMEdfTWA"
+        "auth-token": localStorage.getItem('token')
       },
       body: JSON.stringify({title, description, tag})
     });
